@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+  <div class="text-xl">
+    <h1 class="font-mono font-bold text-6xl px-3 pb-5 text-center">Unicorn</h1>
+    <div class="max-w-md mx-auto bg-white rounded-lg overflow-hidden md:max-w-lg">
+
+      <div class="relative font-mono">
+        <label for="unicornNameInputHTMLElement" class="block  text-sm font-bold mb-2">Name:</label>
+        <input id="unicornNameInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-2  leading-tight focus:outline-none focus:-outline" />
+      </div>
+
+      <div class="relative mt-4 font-mono">
+        <label for="unicornLovesInputHTMLElement" class="block  text-sm font-bold mb-2">Loves:</label>
+        <input id="unicornLovesInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornGenderInputHTMLElement" class="block  text-sm font-bold mb-2">Gender:</label>
+        <input id="unicornGenderInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornsWeightGreaterThanInputHTMLElement" class="block  text-sm font-bold mb-2">Weight
+          Greater Than:</label>
+        <input id="unicornsWeightGreaterThanInputHTMLElement" type="number" min="0" max="1000" step="10" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornsWeightLessThanInputHTMLElement" class="block  text-sm font-bold mb-2">Weight
+          Less
+          Than:</label>
+        <input id="unicornsWeightLessThanInputHTMLElement" type="number" min="0" max="1000" step="10" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornVaccinatedInputHTMLElement"
+          class="block  text-sm font-bold mb-2">Vaccinated:</label>
+        <input id="unicornVaccinatedInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornVampiresGreaterThanInputHTMLElement"
+          class="block  text-sm font-bold mb-2">Vampires
+          Greater Than:</label>
+        <input id="unicornVampiresGreaterThanInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornVampiresExistsInputHTMLElement" class="block  text-sm font-bold mb-2">Vampires
+          Exists:</label>
+        <input id="unicornVampiresExistsInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+      <div class="relative mt-4 font-mono">
+        <label for="unicornSortByInputHTMLElement" class="block  text-sm font-bold mb-2">Sort By:</label>
+        <input id="unicornSortByInputHTMLElement" type="text" value=""
+          class=" appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:-outline" />
+      </div>
+
+    </div>
+    <div class="flex justify-center p-10 font-mono">
+      <button onclick="getUnicorns()"
+        class="bg-red-400 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Get!</button>
+    </div>
+
+    <div class="text-center text-s px-4 py-2 font-mono">
+      <input type="checkbox" id="nameCheckbox" name="" value="">
+      <label for="nameCheckbox"> Name </label><br>
+      <input type="checkbox" id="loveCheckbox" name="" value="">
+      <label for="loveCheckbox"> Loves </label><br>
+      <input type="checkbox" id="genderCheckbox" name="" value="">
+      <label for="genderCheckbox"> Gender </label><br>
+      <input type="checkbox" id="weightCheckbox" name="" value="">
+      <label for="weightCheckbox"> Weight </label><br>
+      <input type="checkbox" id="vaccinatedCheckbox" name="" value="">
+      <label for="vaccinatedCheckbox"> Vaccinated </label><br>
+
+      <input type="checkbox" id="dateofbirthCheckbox" name="" value="">
+      <label for="dateofbirthCheckbox"> Date Of Birth </label><br>
+      <input type="checkbox" id="vampireCheckbox" name="" value="">
+      <label for="vampireCheckbox"> Vampires </label><br>
+    </div>
+
+
+    <div id="resultDIV"></div>
+
+
+    <div class="relative overflow-x-auto -md ">
+      <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+        <thead id="unicornsID" class="text-xs  uppercase bg-gray-50 ">
+          <tr>
+            <th scope="col" class="px-6 py-3 name-column">
+              Name
+            </th>
+            <th scope="col" class="px-6 py-3 loves-column">
+              Loves
+            </th>
+            <th scope="col" class="px-6 py-3 gender-column">
+              gender
+            </th>
+            <th scope="col" class="px-6 py-3 weight-column">
+              weight
+            </th>
+            <th scope="col" class="px-6 py-3 dob-column">
+              Dob
+            </th>
+            <th scope="col" class="px-6 py-3 vaccinated-column">
+              Vaccinated
+            </th>
+            <th scope="col" class="px-6 py-3 vampires-column">
+              Vampires
+            </th>
+
+          </tr>
+        </thead>
+        <tbody id="unicornsTable">
+          <tr class="bg-white border-b ">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap name-column">
+              Unicorn-name </th>
+            <td class="px-6 py-4 loves-column">
+              loves here
+            </td>
+            <td class="px-6 py-4 gender-column">
+              gender
+            </td>
+            <td class="px-6 py-4 weight-column">
+              weight
+            </td>
+            <td class="px-6 py-4 dateofbirth-column">
+              date
+            </td>
+            <td class="px-6 py-4 vaccinated-column">
+              True?
+            </td>
+            <td class="px-6 py-4 vampires-column">
+              Vampire
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function () {
+        getUnicorns();
+
+        function toggleColumn(checkboxID, columnClass) {
+          const checkbox = document.getElementById(checkboxID);
+          checkbox.addEventListener('change', function () {
+            const columnCell = document.querySelectorAll(`.${columnClass}`);
+            for (const cell of columnCell) {
+              cell.style.display = checkbox.checked ? 'table-cell' : 'none';
+            }
+          });
+        }
+        toggleColumn('nameCheckbox', 'name-column');
+        toggleColumn('loveCheckbox', 'loves-column');
+        toggleColumn('genderCheckbox', 'gender-column');
+        toggleColumn('weightCheckbox', 'weight-column');
+        toggleColumn('dateofbirthCheckbox', 'dob-column');
+        toggleColumn('vaccinatedCheckbox', 'vaccinated-column');
+        toggleColumn('vampireCheckbox', 'vampires-column');
+        document.getElementById('nameCheckbox').dispatchEvent(new Event('change'));
+        document.getElementById('loveCheckbox').dispatchEvent(new Event('change'));
+        document.getElementById('genderCheckbox').dispatchEvent(new Event('change'));
+        document.getElementById('weightCheckbox').dispatchEvent(new Event('change'));
+        document.getElementById('dateofbirthCheckbox').dispatchEvent(new Event('change'));
+        document.getElementById('vaccinatedCheckbox').dispatchEvent(new Event('change'));
+        document.getElementById('vampireCheckbox').dispatchEvent(new Event('change'));
+
+      });
+
+
+
+      async function getUnicorns() {
+
+        objectToSentToServer = "";
+
+        if (unicornNameInputHTMLElement.value) objectToSentToServer += `name=${unicornNameInputHTMLElement.value}&`;
+        if (unicornLovesInputHTMLElement.value) objectToSentToServer += `loves=${unicornLovesInputHTMLElement.value}&`;
+        if (unicornGenderInputHTMLElement.value) objectToSentToServer += `gender=${unicornGenderInputHTMLElement.value}&`;
+        if (unicornsWeightGreaterThanInputHTMLElement.value) objectToSentToServer += `weight_gt=${unicornsWeightGreaterThanInputHTMLElement.value}&`;
+        if (unicornsWeightLessThanInputHTMLElement.value) objectToSentToServer += `weight_lt=${unicornsWeightLessThanInputHTMLElement.value}&`;
+        if (unicornVampiresGreaterThanInputHTMLElement.value) objectToSentToServer += `vampires=${unicornVampiresGreaterThanInputHTMLElement.value}&`;
+        if (unicornVampiresExistsInputHTMLElement.value) objectToSentToServer += `vampiresExists=${unicornVampiresExistsInputHTMLElement.value}&`;
+        if (unicornSortByInputHTMLElement.value) objectToSentToServer += `sort=${encodeURIComponent(unicornSortByInputHTMLElement.value)}&`;
+
+        if (unicornVaccinatedInputHTMLElement.value) objectToSentToServer += `vaccinated=${unicornVaccinatedInputHTMLElement.value}&`;
+
+        console.log(objectToSentToServer);
+
+        try {
+          const result = await fetch(
+            `http://localhost:3000/unicorns?${objectToSentToServer}`);
+          if (!result.ok) {
+            throw new Error('Something went wrong');
+          }
+          const unicorns = await result.json();
+          const unicornsTable = document.getElementById('unicornsTable');
+          unicornsTable.innerHTML = "";
+
+
+          unicorns.forEach(unicorn => {
+            let row = `<tr class="bg-white border-b">
+      <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap name-column">${unicorn.name}</th>
+      <td class="px-6 py-4 loves-column">${unicorn.loves}</td>
+      <td class="px-6 py-4 gender-column">${unicorn.gender}</td>
+      <td class="px-6 py-4 weight-column">${unicorn.weight}</td>
+      <td class="px-6 py-4 dob-column">${unicorn.dob}</td>
+      <td class="px-6 py-4 vaccinated-column">${unicorn.vaccinated ? 'Yes' : 'No'}</td>
+      <td class="px-6 py-4 vampires-column">${unicorn.vampires}</td>
+
+    </tr>`;
+            unicornsTable.innerHTML += row;
+          });
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    </script>
+
+
+</body>
+
+
+</html>
